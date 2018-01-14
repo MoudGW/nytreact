@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import Saved from "./Saved";
 import Search from "./Search";
 import Results from "./Results";
-import API from "../utils/api.js";
+import API from "../utils/api";
 
 class Main extends Component {
 
@@ -108,8 +108,7 @@ class Main extends Component {
         <div className="container">
           {/* Jumbotron */}
           <div className="jumbotron">
-            <h1 className="text-center"><strong>New York Times Article Search</strong></h1>
-            <h2 className="text-center">Search for and save articles of interest.</h2>
+            <h1 className="text-center"><strong>New York Times</strong></h1>
           </div>
           {/* Search Form and Results Section */}
           <Search
@@ -139,12 +138,13 @@ class Main extends Component {
               </div>
             </div>
           </div>
-          <footer>
-            <hr />
-            <p className="pull-right">
-              <i className="fa fa-github" aria-hidden="true"></i>
-              Proudly built using React.js
-            </p>
+          <footer className="page-footer black lighten-1">
+            <div className="footer-copyright">
+            <div className="container ">
+             © 2018 Copyright MoudGW
+              <a className="grey-text text-lighten-4 right" href='https://github.com/MoudGW'><i className="fa fa-github fa-2x" aria-hidden="true"/></a>
+            </div>
+            </div>
           </footer>
         </div>
       </div>

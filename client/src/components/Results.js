@@ -1,12 +1,6 @@
 import React from "react";
 
 const Results = props =>
-  // <div>
-  //   <h4>{props.title}</h4>
-  //   <p>Publish Date & Time: {props.date}</p>
-  //   <a href={props.url} target="_blank">Link To Article</a>
-  //   <button onClick={() => props.handleSaveButton(props._id)}>Save</button>
-  // </div>
   <div className="container">
     <li className="list-group-item">
       <h4>
@@ -15,9 +9,9 @@ const Results = props =>
         </span>
         <span className="btn-group pull-right">
           <a href={props.url} target="_blank">
-            <button className="btn btn-default ">View Article</button>
+            <button className="btn btn-default "><i className="material-icons">details</i></button>
           </a>
-          <button className="btn btn-primary" onClick={() => props.handleSaveButton(props._id)}>Save</button>
+          <button className="btn btn-primary" onClick={() => props.handleSaveButton(props._id)}><i className="material-icons">file_download</i></button>
         </span>
       </h4>
       <p>Date Published: {props.date}</p>
