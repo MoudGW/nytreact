@@ -27,7 +27,8 @@ app.use((req, res, next) => {
 });
 
 // Routing
-var articlesController = require("./server/controllers/article-controller");
+var articlesController = require("./controllers/Articles-routes");
+
 var router = new express.Router();
 // Define any API routes first
 // Get saved articles
@@ -38,7 +39,7 @@ router.post("/api/saved", articlesController.insert);
 router.delete("/api/saved/:id", articlesController.delete);
 // Send every other request to the React app
 router.get("/*", function(req, res) {
-  res.sendFile(path.join(__dirname, "./client/build/index.html"));
+  res.sendFile(path.join(__dirname, "./client/public/index.html"));
 });
 
 app.use(router);
