@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import Saved from "./Saved";
 import Search from "./Search";
 import Results from "./Results";
-import API from "../utils/api";
+import API from "../utils/api.js";
 
 class Main extends Component {
 

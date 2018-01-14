@@ -27,7 +27,7 @@ app.use((req, res, next) => {
 });
 
 // Routing
-var articlesController = require("./controllers/Articles-routes");
+var articlesController = require("./controllers/Articles-routes.js");
 
 var router = new express.Router();
 // Define any API routes first
