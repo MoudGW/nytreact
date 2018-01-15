@@ -11,7 +11,7 @@ const Saved = props =>
           <a href={props.url} target="_blank">
             <button className="btn btn-default "><i className="material-icons">details</i></button>
           </a>
-          <button className="btn btn-delete" onClick={() => props.handleDeleteButton(props._id)}><i className="material-icons">delete_forever</i></button>
+          <button className="btn btn-danger" onClick={() => props.handleDeleteButton(props._id)}><i className="material-icons">delete_forever</i></button>
         </span>
       </h4>
       <p>Date Published: {props.date}</p>

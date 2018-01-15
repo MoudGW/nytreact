@@ -119,14 +119,14 @@ class Main extends Component {
             renderArticles={this.renderArticles}
           />
           {/* Saved Articles Section */}
-          <div className="container">
+          <div className="container center">
             <div className="row">
               <div className="col-lg-12">
                 <div className="panel panel-primary">
                   <div className="panel-heading">
                     <h3 className="panel-title">
                       <strong>
-                        <i className="fa fa-download" aria-hidden="true"></i> Saved Articles</strong>
+                        <i className="fa fa-cloud" aria-hidden="true"></i> Saved Articles</strong>
                     </h3>
                   </div>
                   <div className="panel-body">

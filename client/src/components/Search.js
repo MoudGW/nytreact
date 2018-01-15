@@ -1,16 +1,16 @@
 import React from "react";
 
 const Search = props =>
-  <div className="container">
+  <div className="container center">
     <div className="row">
       <div className="col-lg-12">
         <div className="panel panel-primary">
-          <div className="panel-heading">
-            <h3 className="panel-title">
+          <div className="chip">
+            <h2 className="panel-title">
               <strong>
                 <i className="fa fa-search" aria-hidden="true"></i> Search
               </strong>
-            </h3>
+            </h2>
           </div>
           <div className="panel-body">
             <form>
@@ -38,12 +38,12 @@ const Search = props =>
     <div className="row">
       <div className="col-lg-12">
         <div className="panel panel-primary">
-          <div className="panel-heading">
-            <h3 className="panel-title">
+          <div className="chip">
+            <h2 className="panel-title">
               <strong>
                 <i className="fa fa-newspaper-o" aria-hidden="true"></i> Results
               </strong>
-            </h3>
+            </h2>
           </div>
           <div className="panel-body">
             {props.renderArticles()}
