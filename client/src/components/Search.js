@@ -12,7 +12,7 @@ const Search = props =>
               </strong>
             </h2>
           </div>
-          <div className="panel-body">
+          <div className="container text-left">
             <form>
               <div className="form-group">
                 <label htmlFor="topic">Topic</label>

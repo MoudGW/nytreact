@@ -107,8 +107,8 @@ class Main extends Component {
       <div className="main-container">
         <div className="container">
           {/* Jumbotron */}
-          <div className="jumbotron">
-            <h1 className="text-center"><strong>New York Times</strong></h1>
+          <div className="jumbotron black">
+            <h1 className="text-center"><strong className="text-white">New York Times</strong></h1>
           </div>
           {/* Search Form and Results Section */}
           <Search

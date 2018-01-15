@@ -1,7 +1,7 @@
 import React from "react";
 
 const Saved = props =>
-  <div className="container">
+  <div className="container text-left">
     <li className="list-group-item">
       <h4>
         <span>
