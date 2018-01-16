@@ -60,10 +60,12 @@ mongoose.connect(db, function(error) {
 });
 
 // Start the server
-let server=app.listen(PORT, function() {
+server=app.listen(PORT, function() {
   console.log(`🌎 ==> Server now on port ${PORT}!`);
 });
-io = socket(server);
+const io = socket(server);
+
+
 io.on('connection', (socket) => {
   console.log('Client connected');
   socket.on('articles',function (data) {
