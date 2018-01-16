@@ -5,7 +5,7 @@ const bodyParser = require("body-parser");
 const path=require('path');
 const app = express();
 const server = require('http').Server(app);
-//const io = require('socket.io')(server);
+const io = require('socket.io')(server);
 
 //const port = 9000;
 // Set up a default port, configure mongoose, configure our middleware
@@ -64,9 +64,9 @@ mongoose.connect(db, function(error) {
 server.listen(PORT);
 
 
-/*io.on('connection', (socket) => {
+io.on('connection', (socket) => {
   console.log('Client connected');
   socket.on('articles',function (data) {
   socket.broadcast.emit('article',data);
   });
-});*/
+});
