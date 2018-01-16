@@ -3,22 +3,30 @@ import Saved from "./Saved";
 import Search from "./Search";
 import Results from "./Results";
 import API from "../utils/api";
-
+import io from 'socket.io-client';
+import SweetAlert from 'sweetalert-react';
+const socket = io();
 class Main extends Component {
-
+  
   state = {
     topic: "",
     startYear: "",
     endYear: "",
     articles: [],
-    saved: []
+    saved: [],
+    show:'',
+    title:false
   };
-
   // When the component mounts, get a list of all saved articles and update this.state.saved
   componentDidMount() {
-    this.getSavedArticles()
+    var that = this;
+    socket.on('article', function (data) {
+      console.log(data);
+       that.setState({ show: true });
+       that.setState({ title: data.article.title});
+    });
+    this.getSavedArticles();
   }
-
   // Method for getting saved articles (all articles) from the db
   getSavedArticles = () => {
     API.getArticle()
@@ -26,6 +34,7 @@ class Main extends Component {
         this.setState({ saved: res.data });
       });
   }
+
 
   // A helper method for rendering one search results div for each article
   renderArticles = () => {
@@ -93,6 +102,7 @@ class Main extends Component {
     const newSave = {title: findArticleByID.headline.main, date: findArticleByID.pub_date, url: findArticleByID.web_url};
     API.saveArticle(newSave)
     .then(this.getSavedArticles());
+   socket.emit('articles', {article: newSave});
   }
 
   // When delete article button is clicked, remove article from db
@@ -102,10 +112,18 @@ class Main extends Component {
   }
 
   render() {
-    return (
 
-      <div className="main-container">
+    return (
         <div className="container">
+        <div>
+           <SweetAlert
+          show={this.state.show}
+          title="This article was saved"
+          text={this.state.title}
+           onConfirm={() => this.setState({ show: false })}
+
+          />
+          </div>
           {/* Jumbotron */}
           <div className="jumbotron black">
             <h1 className="text-center"><strong className="text-white">New York Times</strong></h1>
@@ -121,9 +139,9 @@ class Main extends Component {
           {/* Saved Articles Section */}
           <div className="container center">
             <div className="row">
-              <div className="col-lg-12">
+              <div className="col-lg-12 ">
                 <div className="panel panel-primary">
-                  <div className="panel-heading">
+                  <div className="panel-heading chip">
                     <h3 className="panel-title">
                       <strong>
                         <i className="fa fa-cloud" aria-hidden="true"></i> Saved Articles</strong>
@@ -138,6 +156,7 @@ class Main extends Component {
               </div>
             </div>
           </div>
+
           <footer className="page-footer black lighten-1">
             <div className="footer-copyright">
             <div className="container ">
@@ -147,8 +166,6 @@ class Main extends Component {
             </div>
           </footer>
         </div>
-      </div>
-
     );
   }
 

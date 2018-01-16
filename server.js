@@ -2,18 +2,20 @@ const express = require("express");
 const mongoose = require("mongoose");
 const bluebird = require("bluebird");
 const bodyParser = require("body-parser");
-const path = require("path");
+const path=require('path');
+const app = express();
+var socket = require('socket.io');
+
 
 // Set up a default port, configure mongoose, configure our middleware
 const PORT = process.env.PORT || 3001;
 mongoose.Promise = bluebird;
-const app = express();
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
 // Serve up static assets if in production (running on Heroku)
 if (process.env.NODE_ENV === "production") {
-  app.use(express.static("client/build"));
+  app.use(express.static("/client/build"));
 } else {
   app.use(express.static(__dirname + "/client/public"));
 }
@@ -32,11 +34,11 @@ var articlesController = require("./controllers/Articles-routes.js");
 var router = new express.Router();
 // Define any API routes first
 // Get saved articles
-router.get("/api/saved", articlesController.find);
+router.get("/api/articles", articlesController.find);
 // Save articles
-router.post("/api/saved", articlesController.insert);
+router.post("/api/articles", articlesController.insert);
 // delete saved articles
-router.delete("/api/saved/:id", articlesController.delete);
+router.delete("/api/articles/:id", articlesController.delete);
 // Send every other request to the React app
 router.get("/*", function(req, res) {
   res.sendFile(path.join(__dirname, "./client/public/index.html"));
@@ -58,6 +60,14 @@ mongoose.connect(db, function(error) {
 });
 
 // Start the server
-app.listen(PORT, function() {
+server=app.listen(PORT, function() {
   console.log(`🌎 ==> Server now on port ${PORT}!`);
+});
+io = socket(server);
+io.on('connection', (socket) => {
+  console.log('Client connected');
+  socket.on('articles',function (data) {
+  console.log(data);
+  socket.broadcast.emit('article',data);
+  });
 });

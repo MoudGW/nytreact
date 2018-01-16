@@ -1,5 +1,4 @@
 import axios from "axios";
-
 const api = {
   // Query NYT API
   searchNYT: function(topic, startYear, endYear) {
@@ -10,16 +9,17 @@ const api = {
   },
   // Retrieves saved articles from the db
   getArticle: function() {
-    return axios.get("/api/saved");
+    return axios.get("/api/articles");
   },
   // Saves a new article to the db
   saveArticle: function(articleObj) {
-    return axios.post("/api/saved", articleObj);
+    return axios.post("/api/articles", articleObj);
   },
   // Deletes an article from the db
   deleteArticle: function(id) {
-    return axios.delete(`/api/saved/${id}`);
+    return axios.delete(`/api/articles/${id}`);
   }
+
 };
 
 export default api;
