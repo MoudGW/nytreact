@@ -4,11 +4,12 @@ const bluebird = require("bluebird");
 const bodyParser = require("body-parser");
 const path=require('path');
 const app = express();
-var socket = require('socket.io');
+const server = require('http').Server(app);
+const io = require('socket.io')(server);
 
-
+const port = 9000;
 // Set up a default port, configure mongoose, configure our middleware
-const PORT = process.env.PORT || 3001;
+//const PORT = process.env.PORT || 3001;
 mongoose.Promise = bluebird;
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
@@ -60,9 +61,7 @@ mongoose.connect(db, function(error) {
 });
 
 // Start the server
-server=app.listen(PORT, function() {
-  console.log(`🌎 ==> Server now on port ${PORT}!`);
-});
+server.listen(port);
 const io = socket(server,{
     pingInterval: 15000,
     pingTimeout: 30000,
