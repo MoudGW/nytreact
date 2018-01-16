@@ -5,7 +5,7 @@ import Results from "./Results";
 import API from "../utils/api";
 import io from 'socket.io-client';
 import SweetAlert from 'sweetalert-react';
-//const socket = io();
+const socket = io.connect(process.env.SOCKET_URL);
 class Main extends Component {
   
   state = {
@@ -20,11 +20,11 @@ class Main extends Component {
   // When the component mounts, get a list of all saved articles and update this.state.saved
   componentDidMount() {
     var that = this;
-  /*  socket.on('article', function (data) {
+    socket.on('article', function (data) {
       console.log(data);
        that.setState({ show: true });
        that.setState({ title: data.article.title});
-    });*/
+    });
     this.getSavedArticles();
   }
   // Method for getting saved articles (all articles) from the db
@@ -102,7 +102,7 @@ class Main extends Component {
     const newSave = {title: findArticleByID.headline.main, date: findArticleByID.pub_date, url: findArticleByID.web_url};
     API.saveArticle(newSave)
     .then(this.getSavedArticles());
-   //socket.emit('articles', {article: newSave});
+   socket.emit('articles', {article: newSave});
   }
 
   // When delete article button is clicked, remove article from db
