@@ -5,7 +5,7 @@ import Results from "./Results";
 import API from "../utils/api";
 import io from 'socket.io-client';
 import SweetAlert from 'sweetalert-react';
-const socket = io.connect('/');
+const socket = io('/');
 class Main extends Component {
   
   state = {
