@@ -17,7 +17,8 @@ React-based rendition of the New York Times Article Search application. Requires
 
 # Live Demo
 
- ![DEMO](https://preview.ibb.co/iEEc1m/demo.gif)
+[![Watch the video](https://raw.github.com/GabLeRoux/WebMole/master/ressources/WebMole_Youtube_Video.png)](http://youtu.be/vt5fpE0bzSY)
+
  
 # Installation
 1) git clone git://github.com/MoudGW/nytreact
