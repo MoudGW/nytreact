@@ -60,7 +60,7 @@ mongoose.connect(db, function(error) {
 });
 
 // Start the server
-server=app.listen(PORT, function() {
+let server=app.listen(PORT, function() {
   console.log(`🌎 ==> Server now on port ${PORT}!`);
 });
 io = socket(server);
