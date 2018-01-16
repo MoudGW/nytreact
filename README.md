@@ -20,7 +20,7 @@ React-based rendition of the New York Times Article Search application. Requires
 
 # Live Demo
 
-![DEMO](https://image.ibb.co/kDXiP6/22rj4m.gif)
+![DEMO](https://image.ibb.co/n4OXj6/demo_1.gif)
 
  
 # Installation
