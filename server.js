@@ -63,10 +63,11 @@ mongoose.connect(db, function(error) {
 server=app.listen(PORT, function() {
   console.log(`🌎 ==> Server now on port ${PORT}!`);
 });
-const io = socket(server);
+const io = socket(server,{
+    pingInterval: 15000,
+    pingTimeout: 30000,
+});
 
-io.set('transports', ['xhr-polling']);
-io.set('polling duration', 10);
 io.on('connection', (socket) => {
   console.log('Client connected');
   socket.on('articles',function (data) {
