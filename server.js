@@ -67,7 +67,6 @@ io = socket(server);
 io.on('connection', (socket) => {
   console.log('Client connected');
   socket.on('articles',function (data) {
-  console.log(data);
   socket.broadcast.emit('article',data);
   });
 });

@@ -14,8 +14,8 @@ class Main extends Component {
     endYear: "",
     articles: [],
     saved: [],
-    show:'',
-    title:false
+    show:false,
+    title:''
   };
   // When the component mounts, get a list of all saved articles and update this.state.saved
   componentDidMount() {

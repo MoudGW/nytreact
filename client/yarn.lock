@@ -1381,10 +1381,6 @@ clap@^1.0.9:
   dependencies:
     chalk "^1.1.3"
 
-classnames@^2.2.5:
-  version "2.2.5"
-  resolved "https://registry.yarnpkg.com/classnames/-/classnames-2.2.5.tgz#fb3801d453467649ef3603c7d61a02bd129bde6d"
-
 clean-css@4.1.x:
   version "4.1.7"
   resolved "https://registry.yarnpkg.com/clean-css/-/clean-css-4.1.7.tgz#b9aea4f85679889cf3eae8b40349ec4ebdfdd032"
@@ -4532,10 +4528,6 @@ osenv@^0.1.0, osenv@^0.1.4:
     os-homedir "^1.0.0"
     os-tmpdir "^1.0.0"
 
-overload-js@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/overload-js/-/overload-js-1.0.0.tgz#0b3c53f4e1a54ac6c118c50e9323e50d231aae20"
-
 p-finally@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/p-finally/-/p-finally-1.0.0.tgz#3fbcfb15b899a44123b34b6dcc18b724336a2cae"
@@ -5183,19 +5175,6 @@ rc@^1.0.1, rc@^1.1.6, rc@^1.1.7:
     minimist "^1.2.0"
     strip-json-comments "~2.0.1"
 
-react-alertify-js@^0.0.1:
-  version "0.0.1"
-  resolved "https://registry.yarnpkg.com/react-alertify-js/-/react-alertify-js-0.0.1.tgz#47e5881ca31aef856201f58aa9a0eae28ec88502"
-  dependencies:
-    classnames "^2.2.5"
-    overload-js "^1.0.0"
-
-react-bootstrap-sweetalert@^4.1.0:
-  version "4.1.0"
-  resolved "https://registry.yarnpkg.com/react-bootstrap-sweetalert/-/react-bootstrap-sweetalert-4.1.0.tgz#1e9297af13e2084a25b95062dcda2c02a57498d6"
-  dependencies:
-    object-assign "^4.1.0"
-
 react-dev-utils@^3.1.0:
   version "3.1.1"
   resolved "https://registry.yarnpkg.com/react-dev-utils/-/react-dev-utils-3.1.1.tgz#09ae7209a81384248db56547e718e65bd3b20eb5"
@@ -5239,10 +5218,6 @@ react-error-overlay@^1.0.10:
     react-dev-utils "^3.1.0"
     settle-promise "1.0.0"
     source-map "0.5.6"
-
-react-popup@^0.9.1:
-  version "0.9.1"
-  resolved "https://registry.yarnpkg.com/react-popup/-/react-popup-0.9.1.tgz#b7491cc1d1857729a9a36667f244ef7cce749c66"
 
 react-router-dom@^4.2.2:
   version "4.2.2"
