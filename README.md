@@ -13,11 +13,14 @@ React-based rendition of the New York Times Article Search application. Requires
 7) react-router
 8) react-scripts 
 9) socket.io
-10) sweetALert
+10) socket.io-client
+11) sweetALert
+12) materialize.css
+13) bootstrap
 
 # Live Demo
 
- ![DEMO](https://preview.ibb.co/iEEc1m/demo.gif)
+![DEMO](https://image.ibb.co/cFS3rm/ezgif_com_video_to_gif.gif)
  
 # Installation
 1) git clone git://github.com/MoudGW/nytreact
