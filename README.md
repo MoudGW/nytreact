@@ -20,8 +20,7 @@ React-based rendition of the New York Times Article Search application. Requires
 
 # Live Demo
 
-![DEMO](https://image.ibb.co/n4OXj6/demo_1.gif)
-<img src="https://static01.bbi.io/2Wt9Tk.gif"/>
+![DEMO](https://image.ibb.co/cFS3rm/ezgif_com_video_to_gif.gif)
  
 # Installation
 1) git clone git://github.com/MoudGW/nytreact
