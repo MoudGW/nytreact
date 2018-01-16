@@ -20,7 +20,7 @@ React-based rendition of the New York Times Article Search application. Requires
 
 # Live Demo
 
-![DEMO](https://imgflip.com/gif/22rj4m)
+![DEMO](https://image.ibb.co/kDXiP6/22rj4m.gif)
 
  
 # Installation
