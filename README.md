@@ -13,11 +13,14 @@ React-based rendition of the New York Times Article Search application. Requires
 7) react-router
 8) react-scripts 
 9) socket.io
-10) sweetALert
+10) socket.io-client
+11) sweetALert
+12) materialize.css
+13) bootstrap
 
 # Live Demo
 
-[![Watch the video](https://raw.github.com/GabLeRoux/WebMole/master/ressources/WebMole_Youtube_Video.png)](http://youtu.be/vt5fpE0bzSY)
+![DEMO](https://imgflip.com/gif/22rj4m)
 
  
 # Installation
